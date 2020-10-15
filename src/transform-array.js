@@ -22,7 +22,7 @@ const transformArr = [];
           }
           break;
         case '--discard-prev':
-          if(transformArr.length>1 && !undefinedElement){
+          if(transformArr.length>0 && !undefinedElement){
             transformArr.pop();
           }
           break;
@@ -32,8 +32,8 @@ const transformArr = [];
           }
           break;
         case '--double-prev':
-          if(transformArr.length>1 && !undefinedElement){
-            transformArr.push(arr[index-1]);
+          if(transformArr.length>0 && !undefinedElement){
+            transformArr.push(transformArr[transformArr.length-1]);
           }
           break;
         default:
